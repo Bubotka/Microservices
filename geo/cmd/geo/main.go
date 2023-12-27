@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"geo/domain/models"
-	"geo/internal/grpc"
-	"geo/pkg/db"
-	"geo/pkg/db/tools/Initializer"
-	migrator2 "geo/pkg/db/tools/migrator"
+	"github.com/Bubotka/Microservices/geo/domain/models"
+	"github.com/Bubotka/Microservices/geo/internal/grpc"
+	"github.com/Bubotka/Microservices/geo/pkg/db"
+	"github.com/Bubotka/Microservices/geo/pkg/db/tools/Initializer"
+	"github.com/Bubotka/Microservices/geo/pkg/db/tools/migrator"
+
 	_ "github.com/lib/pq"
 	"os"
 )
@@ -27,8 +28,8 @@ func main() {
 	initializer := Initializer.NewInitializer(postgresDB)
 	initializer.Init()
 
-	var generator migrator2.SQLiteGenerator
-	m := migrator2.NewMigrator(postgresDB, &generator)
+	var generator migrator.SQLiteGenerator
+	m := migrator.NewMigrator(postgresDB, &generator)
 	err = m.Migrate(&models.SearchHistoryAddress{})
 	if err != nil {
 		fmt.Println("Не удалось мигрировать")

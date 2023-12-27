@@ -1,8 +1,8 @@
 package grpc
 
 import (
-	"geo/internal/services/geo"
-	gp "geo/pkg/go/geo"
+	"github.com/Bubotka/Microservices/geo/internal/services/geo"
+	gp "github.com/Bubotka/Microservices/geo/pkg/go/geo"
 	"google.golang.org/grpc"
 	"log"
 
