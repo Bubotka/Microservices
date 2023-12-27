@@ -3,7 +3,7 @@ package adapter
 import (
 	"context"
 	"fmt"
-	"github.com/Bubotka/Microservices/geo/domain/models"
+	"geo/domain/models"
 
 	sq "github.com/Masterminds/squirrel"
 	"github.com/jmoiron/sqlx"

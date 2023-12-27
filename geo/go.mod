@@ -1,4 +1,4 @@
-module github.com/Bubotka/Microservices/geo
+module geo
 
 go 1.19
 

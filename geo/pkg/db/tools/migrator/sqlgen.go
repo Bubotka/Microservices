@@ -2,7 +2,7 @@ package migrator
 
 import (
 	"fmt"
-	"github.com/Bubotka/Microservices/geo/domain/models"
+	"geo/domain/models"
 
 	"reflect"
 	"strings"

@@ -1,3 +1,5 @@
+github.com/Bubotka/Microservices v0.0.0-20231227122814-3fc1c1931184 h1:A7CKj6QSZ2QyaLeDr45UNBiK3gmr8ZjOWPbNbkhsBxI=
+github.com/Bubotka/Microservices v0.0.0-20231227122814-3fc1c1931184/go.mod h1:bXEyOshRkp73o3sDreiYdyTXiR4G7BR1+93QfYFDsy8=
 github.com/Bubotka/mymath v0.0.0-20231007151304-df3bf9f675e4 h1:8oQWSLbqUVCKABmpiK6Qfj3DQ5ej4PkpuUGwvuFRs3c=
 github.com/Bubotka/mymath v0.0.0-20231007151304-df3bf9f675e4/go.mod h1:oeIBoIXeWOvELcjlSZSZQqvyA+afqD006A+Q97zttMY=
 github.com/Masterminds/squirrel v1.5.4 h1:uUcX/aBc8O7Fg9kaISIUsHXdKuqehiXAMQTYX8afzqM=

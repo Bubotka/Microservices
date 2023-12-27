@@ -2,7 +2,7 @@ package client_adapter
 
 import (
 	"context"
-	gp "geo/pkg/go/geo"
+	gp "github.com/Bubotka/Microservices/geo/pkg/go/geo"
 	"main/internal/models"
 )
 

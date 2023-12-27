@@ -19,6 +19,7 @@ require (
 )
 
 require (
+	github.com/Bubotka/Microservices v0.0.0-20231227122814-3fc1c1931184 // indirect
 	github.com/Bubotka/mymath v0.0.0-20231007151304-df3bf9f675e4 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/goccy/go-json v0.3.5 // indirect
