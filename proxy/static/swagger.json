@@ -1,0 +1,132 @@
+{
+  "consumes": [
+    "application/json",
+    "multipart/form-..database"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentation of your project API.",
+    "title": "infoblog.",
+    "version": "1.0.0"
+  },
+  "basePath": "/",
+  "paths": {
+    "/api/address/geocode": {
+      "post": {
+        "security": [
+          {
+            "Bearer": [
+              "[]"
+            ]
+          }
+        ],
+        "tags": [
+          "геолокация"
+        ],
+        "summary": "Определение адреса на основе широты и долготы.",
+        "operationId": "geoRequest",
+        "parameters": [
+          {
+            "example": "{\"lat\":\"59.948474778247544\",\"lng\":\"30.296516418457035\"}",
+            "description": "Coordinates - кординаты на карте",
+            "name": "Coordinates",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/geolocationResponse"
+          }
+        }
+      }
+    },
+    "/api/address/search": {
+      "post": {
+        "security": [
+          {
+            "Bearer": [
+              "[]"
+            ]
+          }
+        ],
+        "tags": [
+          "поиск"
+        ],
+        "summary": "Поиск адресов на основе запроса адреса.",
+        "operationId": "searchRequest",
+        "parameters": [
+          {
+            "example": "{\"query\": \"Москва\"}",
+            "description": "Query - поисковой запрос адреса",
+            "name": "Query",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/searchResponse"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddressElementSearch": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "string",
+          "x-go-name": "GeoLat"
+        },
+        "lon": {
+          "type": "string",
+          "x-go-name": "GeoLon"
+        },
+        "result": {
+          "type": "string",
+          "x-go-name": "Result"
+        }
+      },
+      "x-go-package": "main/internal/models"
+    },
+    "AddressSearchReworked": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AddressElementSearch"
+      },
+      "x-go-package": "main/internal/models"
+    }
+  },
+  "responses": {
+    "geolocationResponse": {
+      "description": "",
+      "schema": {
+        "$ref": "#/definitions/AddressSearchReworked"
+      }
+    },
+    "searchResponse": {
+      "description": "",
+      "schema": {
+        "$ref": "#/definitions/AddressSearchReworked"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

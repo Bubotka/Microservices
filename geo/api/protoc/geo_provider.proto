@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package geo_provider;
+
+option go_package = "../../pkg/go/geo";
+
+service GeoProvider {
+  rpc Search (SearchRequest) returns (SearchResponse) {}
+  rpc GeoCode (GeoRequest) returns (GeoResponse) {}
+}
+
+message SearchRequest {
+  string place = 1;
+}
+
+message GeoRequest {
+  string coordinates = 1;
+}
+
+message SearchResponse {
+  repeated AddressElementSearch elements = 1;
+}
+
+message GeoResponse {
+  repeated AddressElementSearch elements = 1;
+}
+
+message AddressElementSearch {
+  string result = 1;
+  string geo_lat = 2;
+  string geo_lon = 3;
+}
