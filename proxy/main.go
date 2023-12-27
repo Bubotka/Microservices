@@ -1,9 +1,10 @@
 package main
 
 import (
+	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/router"
+	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/server"
 	_ "github.com/lib/pq"
-	"main/internal/infrastructure/router"
-	"main/internal/infrastructure/server"
+
 	"net/http"
 )
 

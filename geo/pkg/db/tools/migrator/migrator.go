@@ -2,7 +2,7 @@ package migrator
 
 import (
 	"fmt"
-	"geo/domain/models"
+	"github.com/Bubotka/Microservices/geo/domain/models"
 
 	"github.com/jmoiron/sqlx"
 	"golang.org/x/sync/errgroup"

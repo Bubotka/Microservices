@@ -4,8 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"geo/domain/models"
-	gp "geo/pkg/go/geo"
+	"github.com/Bubotka/Microservices/geo/domain/models"
+
+	gp "github.com/Bubotka/Microservices/geo/pkg/go/geo"
 	"io/ioutil"
 	"net/http"
 	"strconv"

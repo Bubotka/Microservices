@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"geo/domain/models"
-	"geo/internal/grpc"
-	"geo/pkg/db"
-	"geo/pkg/db/tools/Initializer"
-	"geo/pkg/db/tools/migrator"
+	"github.com/Bubotka/Microservices/geo/domain/models"
+	"github.com/Bubotka/Microservices/geo/internal/grpc"
+	"github.com/Bubotka/Microservices/geo/pkg/db"
+	"github.com/Bubotka/Microservices/geo/pkg/db/tools/Initializer"
+	"github.com/Bubotka/Microservices/geo/pkg/db/tools/migrator"
 
 	_ "github.com/lib/pq"
 	"os"
