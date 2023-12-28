@@ -8,6 +8,7 @@ package geo
 
 import (
 	context "context"
+	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -22,6 +23,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GeoProviderClient interface {
+	ListLevenshtein(ctx context.Context, in *ListLevenshteinRequest, opts ...grpc.CallOption) (*ListLevenshteinResponse, error)
+	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	Search(ctx context.Context, in *SearchRequest, opts ...grpc.CallOption) (*SearchResponse, error)
 	GeoCode(ctx context.Context, in *GeoRequest, opts ...grpc.CallOption) (*GeoResponse, error)
 }
@@ -32,6 +35,24 @@ type geoProviderClient struct {
 
 func NewGeoProviderClient(cc grpc.ClientConnInterface) GeoProviderClient {
 	return &geoProviderClient{cc}
+}
+
+func (c *geoProviderClient) ListLevenshtein(ctx context.Context, in *ListLevenshteinRequest, opts ...grpc.CallOption) (*ListLevenshteinResponse, error) {
+	out := new(ListLevenshteinResponse)
+	err := c.cc.Invoke(ctx, "/geo_provider.GeoProvider/ListLevenshtein", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *geoProviderClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+	out := new(empty.Empty)
+	err := c.cc.Invoke(ctx, "/geo_provider.GeoProvider/Create", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *geoProviderClient) Search(ctx context.Context, in *SearchRequest, opts ...grpc.CallOption) (*SearchResponse, error) {
@@ -56,6 +77,8 @@ func (c *geoProviderClient) GeoCode(ctx context.Context, in *GeoRequest, opts ..
 // All implementations must embed UnimplementedGeoProviderServer
 // for forward compatibility
 type GeoProviderServer interface {
+	ListLevenshtein(context.Context, *ListLevenshteinRequest) (*ListLevenshteinResponse, error)
+	Create(context.Context, *CreateRequest) (*empty.Empty, error)
 	Search(context.Context, *SearchRequest) (*SearchResponse, error)
 	GeoCode(context.Context, *GeoRequest) (*GeoResponse, error)
 	mustEmbedUnimplementedGeoProviderServer()
@@ -65,6 +88,12 @@ type GeoProviderServer interface {
 type UnimplementedGeoProviderServer struct {
 }
 
+func (UnimplementedGeoProviderServer) ListLevenshtein(context.Context, *ListLevenshteinRequest) (*ListLevenshteinResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListLevenshtein not implemented")
+}
+func (UnimplementedGeoProviderServer) Create(context.Context, *CreateRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+}
 func (UnimplementedGeoProviderServer) Search(context.Context, *SearchRequest) (*SearchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Search not implemented")
 }
@@ -82,6 +111,42 @@ type UnsafeGeoProviderServer interface {
 
 func RegisterGeoProviderServer(s grpc.ServiceRegistrar, srv GeoProviderServer) {
 	s.RegisterService(&GeoProvider_ServiceDesc, srv)
+}
+
+func _GeoProvider_ListLevenshtein_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLevenshteinRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GeoProviderServer).ListLevenshtein(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/geo_provider.GeoProvider/ListLevenshtein",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GeoProviderServer).ListLevenshtein(ctx, req.(*ListLevenshteinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GeoProvider_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GeoProviderServer).Create(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/geo_provider.GeoProvider/Create",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GeoProviderServer).Create(ctx, req.(*CreateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _GeoProvider_Search_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -127,6 +192,14 @@ var GeoProvider_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "geo_provider.GeoProvider",
 	HandlerType: (*GeoProviderServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "ListLevenshtein",
+			Handler:    _GeoProvider_ListLevenshtein_Handler,
+		},
+		{
+			MethodName: "Create",
+			Handler:    _GeoProvider_Create_Handler,
+		},
 		{
 			MethodName: "Search",
 			Handler:    _GeoProvider_Search_Handler,

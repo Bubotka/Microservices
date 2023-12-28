@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/Bubotka/Microservices/geo/domain/models"
+	"github.com/Bubotka/Microservices/geo/internal/storage"
+	"github.com/golang/protobuf/ptypes/empty"
 
 	gp "github.com/Bubotka/Microservices/geo/pkg/go/geo"
 	"io/ioutil"
@@ -15,10 +17,32 @@ import (
 
 type GeoService struct {
 	gp.UnimplementedGeoProviderServer
+	storage storage.GeoRepository
 }
 
-func NewGeoService() *GeoService {
-	return &GeoService{}
+func NewGeoService(storage storage.GeoRepository) *GeoService {
+	return &GeoService{storage: storage}
+}
+
+func (g *GeoService) ListLevenshtein(ctx context.Context, req *gp.ListLevenshteinRequest) (*gp.ListLevenshteinResponse, error) {
+	out, err := g.storage.ListLevenshtein(ctx, req.Column, req.Text)
+	sha := &gp.SearchHistoryAddress{
+		Id:              int32(out.Id),
+		SearchRequest:   out.SearchRequest,
+		AddressResponse: out.AddressResponse,
+	}
+	return &gp.ListLevenshteinResponse{Sha: sha}, err
+}
+
+func (g *GeoService) Create(ctx context.Context, req *gp.CreateRequest) (*empty.Empty, error) {
+	sha := models.SearchHistoryAddress{
+		Id:              int(req.Sha.Id),
+		SearchRequest:   req.Sha.SearchRequest,
+		AddressResponse: req.Sha.AddressResponse,
+	}
+
+	err := g.storage.Create(ctx, sha)
+	return &empty.Empty{}, err
 }
 
 func (g *GeoService) Search(ctx context.Context, req *gp.SearchRequest) (*gp.SearchResponse, error) {

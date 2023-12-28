@@ -3,10 +3,11 @@ package controller
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/responder"
+	"github.com/Bubotka/Microservices/proxy/internal/models"
+	"github.com/Bubotka/Microservices/proxy/internal/modules/user/service"
 	"github.com/go-chi/chi"
-	"main/internal/infrastructure/responder"
-	"main/internal/models"
-	"main/internal/modules/user/service"
+
 	"net/http"
 	"strconv"
 )

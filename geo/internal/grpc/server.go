@@ -1,7 +1,10 @@
 package grpc
 
 import (
+	"github.com/Bubotka/Microservices/geo/internal/cache"
 	"github.com/Bubotka/Microservices/geo/internal/services/geo"
+	"github.com/Bubotka/Microservices/geo/internal/storage"
+	"github.com/Bubotka/Microservices/geo/pkg/db/adapter"
 	gp "github.com/Bubotka/Microservices/geo/pkg/go/geo"
 	"google.golang.org/grpc"
 	"log"
@@ -10,10 +13,12 @@ import (
 )
 
 type GrpcServer struct {
+	adapter adapter.SqlAdapterer
+	cache   cache.Cache
 }
 
-func NewGrpcServer() *GrpcServer {
-	return &GrpcServer{}
+func NewGrpcServer(adapter adapter.SqlAdapterer, cache cache.Cache) *GrpcServer {
+	return &GrpcServer{adapter: adapter, cache: cache}
 }
 
 func (g *GrpcServer) Listen(address string) {
@@ -23,7 +28,8 @@ func (g *GrpcServer) Listen(address string) {
 	}
 
 	server := grpc.NewServer()
-	gp.RegisterGeoProviderServer(server, geo.NewGeoService())
+	geoStorage := storage.NewGeoStorage(g.adapter, g.cache)
+	gp.RegisterGeoProviderServer(server, geo.NewGeoService(geoStorage))
 
 	log.Println("Запуск gRPC сервера...")
 	if err := server.Serve(l); err != nil {

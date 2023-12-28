@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="119f2091-7093-421e-9d04-397632f0349c" name="Changes" comment="Trying to create package">
+      <change afterPath="$PROJECT_DIR$/.idea/Microservices.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geo/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geo/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geo/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geo/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geo/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/api/protoc/geo_provider.proto" beforeDir="false" afterPath="$PROJECT_DIR$/geo/api/protoc/geo_provider.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/cmd/geo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/cmd/geo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/internal/grpc/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/grpc/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/internal/services/geo/geo_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/services/geo/geo_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/pkg/go/geo/geo_provider.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/pkg/go/geo/geo_provider.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/pkg/go/geo/geo_provider_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/pkg/go/geo/geo_provider_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/geo.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/geo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/infrastructure/cache/Redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/cache/Redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/infrastructure/cache/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/cache/cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/infrastructure/clients/geo/grpc/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/infrastructure/clients/geo/grpc/geo_provider.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/infrastructure/clients/geo/grpc/client_adapter/adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/infrastructure/clients/geo/grpc/client_adapter/adapter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/infrastructure/clients/geo/grpc/client_adapter/client_grpc_adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/infrastructure/clients/geo/grpc/client_adapter/client_grpc_adapter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/infrastructure/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/infrastructure/router/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/auth/controller/auth_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/auth/controller/auth_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/geo/controller/geo_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/geo/controller/geo_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/geo/controller/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/geo/controller/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/geo/service/geo_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/geo/service/geo_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/geo/service/geo_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/geo/service/geo_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/geo/storage/geo_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/storage/geo_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/geo/storage/geo_storage.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/storage/geo_storage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/geo/storage/mocks/GeoRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/storage/mocks/GeoRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/controller/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/controller/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/controller/user_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/controller/user_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/storage/user_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/storage/user_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/storage/user_storage.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/storage/user_storage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/main.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.19" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2a7prZNHz0kMcGkKkfZnCgqNzzx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/valentine/Go/src/Microservices/geo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/geo" />
+      <recent name="$PROJECT_DIR$/geo/internal" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/geo/pkg/go/geo" />
+      <recent name="$PROJECT_DIR$/geo/internal" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-467a64f6063b-ee0e143f3e2b-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.11799.286" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Trying to create package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to create package" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

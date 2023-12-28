@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"geo/internal/db/adapter"
-	"main/internal/infrastructure/cache"
-	"main/internal/models"
+	"github.com/Bubotka/Microservices/geo/domain/models"
+	"github.com/Bubotka/Microservices/geo/internal/cache"
+	"github.com/Bubotka/Microservices/geo/pkg/db/adapter"
 )
 
 type GeoStorage struct {

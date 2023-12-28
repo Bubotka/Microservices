@@ -1,7 +1,7 @@
 package docks
 
 import (
-	"main/internal/models"
+	"github.com/Bubotka/Microservices/proxy/internal/models"
 )
 
 //swagger:route Post /api/address/geocode геолокация geoRequest

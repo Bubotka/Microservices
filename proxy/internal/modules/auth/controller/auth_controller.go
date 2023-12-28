@@ -2,8 +2,9 @@ package controller
 
 import (
 	"encoding/json"
-	"main/internal/infrastructure/responder"
-	"main/internal/modules/auth/service"
+	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/responder"
+	"github.com/Bubotka/Microservices/proxy/internal/modules/auth/service"
+
 	"net/http"
 )
 

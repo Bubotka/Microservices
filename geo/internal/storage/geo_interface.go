@@ -2,7 +2,7 @@ package storage
 
 import (
 	"context"
-	"main/internal/models"
+	"github.com/Bubotka/Microservices/geo/domain/models"
 )
 
 //go:generate go run github.com/vektra/mockery/v2@v2.36.0 --name=GeoRepository

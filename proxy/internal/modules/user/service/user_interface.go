@@ -1,6 +1,6 @@
 package service
 
-import "main/internal/models"
+import "github.com/Bubotka/Microservices/proxy/internal/models"
 
 type Userer interface {
 	Create(in CreateIn) CreateOut

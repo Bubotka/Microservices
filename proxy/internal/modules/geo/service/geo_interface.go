@@ -1,7 +1,7 @@
 package service
 
 import (
-	"main/internal/models"
+	"github.com/Bubotka/Microservices/proxy/internal/models"
 )
 
 type GeoI interface {

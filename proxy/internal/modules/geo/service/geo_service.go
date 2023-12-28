@@ -1,28 +1,28 @@
 package service
 
 import (
-	"context"
 	"fmt"
-	"main/internal/infrastructure/clients/geo/grpc"
-	"main/internal/modules/geo/storage"
+	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/clients/geo/grpc"
 )
 
 type GeoService struct {
-	storage     storage.GeoRepository
 	geoProvider grpc.GeoProvider
 }
 
-func NewGeoService(storage storage.GeoRepository, geoProvider grpc.GeoProvider) *GeoService {
-	return &GeoService{storage: storage, geoProvider: geoProvider}
+func NewGeoService(geoProvider grpc.GeoProvider) *GeoService {
+	return &GeoService{geoProvider: geoProvider}
 }
 
 func (g *GeoService) ListLevenshtein(in ListlIn) ListlOut {
-	out, err := g.storage.ListLevenshtein(context.Background(), in.Column, in.Text)
-	return ListlOut{out, err}
+	levenshtein, err := g.geoProvider.ListLevenshtein(in.Column, in.Text)
+	if err != nil {
+		return ListlOut{}
+	}
+	return ListlOut{levenshtein, nil}
 }
 
 func (g *GeoService) Create(in CreateIn) {
-	g.storage.Create(context.Background(), in.SHA)
+	g.geoProvider.Create(in.SHA)
 }
 
 func (g *GeoService) Search(in SearchIn) SearchOut {

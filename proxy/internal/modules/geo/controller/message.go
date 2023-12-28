@@ -1,6 +1,6 @@
 package controller
 
-import "main/internal/models"
+import "github.com/Bubotka/Microservices/proxy/internal/models"
 
 type SearchResponse struct {
 	Addresses models.AddressSearchReworked `json:"addresses"`

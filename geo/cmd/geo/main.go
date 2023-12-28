@@ -3,10 +3,14 @@ package main
 import (
 	"fmt"
 	"github.com/Bubotka/Microservices/geo/domain/models"
+	"github.com/Bubotka/Microservices/geo/internal/cache"
 	"github.com/Bubotka/Microservices/geo/internal/grpc"
 	"github.com/Bubotka/Microservices/geo/pkg/db"
+	"github.com/Bubotka/Microservices/geo/pkg/db/adapter"
 	"github.com/Bubotka/Microservices/geo/pkg/db/tools/Initializer"
 	"github.com/Bubotka/Microservices/geo/pkg/db/tools/migrator"
+	"github.com/Masterminds/squirrel"
+	"github.com/go-redis/redis"
 
 	_ "github.com/lib/pq"
 	"os"
@@ -35,6 +39,13 @@ func main() {
 		fmt.Println("Не удалось мигрировать")
 	}
 
-	grpcServer := grpc.NewGrpcServer()
-	go grpcServer.Listen(":8082")
+	client := redis.NewClient(&redis.Options{
+		Addr: "redis:6379",
+	})
+
+	redisCache := cache.NewRedis(client)
+	sqlAdapter := adapter.NewSQLAdapter(postgresDB, squirrel.StatementBuilder.PlaceholderFormat(squirrel.Dollar))
+
+	grpcServer := grpc.NewGrpcServer(sqlAdapter, redisCache)
+	go grpcServer.Listen(":8081")
 }

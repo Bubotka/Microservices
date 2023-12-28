@@ -2,8 +2,8 @@ package storage
 
 import (
 	"context"
-	"geo/internal/db/adapter"
-	"main/internal/models"
+	"github.com/Bubotka/Microservices/geo/pkg/db/adapter"
+	"github.com/Bubotka/Microservices/proxy/internal/models"
 )
 
 //go:generate go run github.com/vektra/mockery/v2@v2.36.0 --name=UserRepository

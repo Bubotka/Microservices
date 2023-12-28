@@ -1,6 +1,6 @@
 package docks
 
-import "main/internal/modules/user/controller"
+import "github.com/Bubotka/Microservices/proxy/internal/modules/user/controller"
 
 //swagger:route Post /api/create создание_пользователя CreateRequest
 // Responses:

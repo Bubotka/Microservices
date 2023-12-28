@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"geo/internal/db/adapter"
-	"main/internal/modules/user/storage"
+	"github.com/Bubotka/Microservices/geo/pkg/db/adapter"
+	"github.com/Bubotka/Microservices/proxy/internal/modules/user/storage"
 )
 
 type User struct {
