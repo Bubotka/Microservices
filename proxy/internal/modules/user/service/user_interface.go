@@ -4,11 +4,8 @@ import "github.com/Bubotka/Microservices/proxy/internal/models"
 
 type Userer interface {
 	Create(in CreateIn) CreateOut
-	GetByID(in GetIn) GetOut
-	Update(in UpdateIn) UpdateOut
-	Delete(in DeleteIn) DeleteOut
-	List(in ListIn) ListOut
-	Count() CountOut
+	GetByUsername(in GetIn) GetOut
+	List() ListOut
 }
 
 type CreateIn struct {
@@ -21,7 +18,7 @@ type CreateOut struct {
 }
 
 type GetIn struct {
-	Id string
+	Username string
 }
 
 type GetOut struct {
@@ -29,35 +26,7 @@ type GetOut struct {
 	Error error
 }
 
-type UpdateIn struct {
-	User models.User
-}
-
-type UpdateOut struct {
-	Message string
-	Error   error
-}
-
-type DeleteIn struct {
-	Id int
-}
-
-type DeleteOut struct {
-	Message string
-	Error   error
-}
-
-type ListIn struct {
-	Limit  int
-	Offset int
-}
-
 type ListOut struct {
 	User  []models.User
-	Error error
-}
-
-type CountOut struct {
-	Count int
 	Error error
 }

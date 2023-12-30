@@ -1,16 +1,9 @@
 version: '3.8'
 
 services:
-  app:
+  proxy:
     build: proxy
     container_name: proxy
-    environment:
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_USER: ${DB_USER}
-      DB_NAME: ${DB_NAME}
-      DB_PORT: ${DB_PORT}
-      DB_HOST: ${DB_HOST}
-      RPC_PROTOCOL: ${RPC_PROTOCOL}
     volumes:
       - "./hugo/content:/app/static"
     ports:
@@ -18,29 +11,7 @@ services:
     networks:
       - mylocal
     depends_on:
-      - redis
       - server
-      - db
-  db:
-    container_name: db
-    image: postgres
-    environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_DB: ${DB_NAME}
-    volumes:
-      - ./.database/postgres/data:/var/lib/postgresql/data
-    ports:
-      - "5436:5432"
-    networks:
-      - mylocal
-  redis:
-    container_name: redis
-    image: redis:7.0.2-alpine
-    ports:
-      - "6379:6379"
-    networks:
-      - mylocal
   server:
     image: klakegg/hugo:0.101.0-ext-alpine
     container_name: hugo

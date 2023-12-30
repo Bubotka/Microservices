@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.12.4
-// source: api/protoc/geo_provider.proto
+// source: api/protoc/user.proto
 
 package geo
 
@@ -210,5 +210,5 @@ var GeoProvider_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "api/protoc/geo_provider.proto",
+	Metadata: "api/protoc/user.proto",
 }

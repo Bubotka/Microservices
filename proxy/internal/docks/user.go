@@ -106,5 +106,5 @@ type GetByIdRequest struct {
 type GetByIdResponse struct {
 	// in: body
 	// Response ответ содержащий пользователя.
-	Response controller.User
+	Response controller.UserController
 }

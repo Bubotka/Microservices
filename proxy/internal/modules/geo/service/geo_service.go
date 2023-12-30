@@ -2,21 +2,23 @@ package service
 
 import (
 	"fmt"
-	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/clients/geo/grpc"
+	geogrpc "github.com/Bubotka/Microservices/proxy/internal/infrastructure/clients/geo"
+
+	"github.com/Bubotka/Microservices/proxy/internal/models"
 )
 
 type GeoService struct {
-	geoProvider grpc.GeoProvider
+	geoProvider geogrpc.GeoProviderer
 }
 
-func NewGeoService(geoProvider grpc.GeoProvider) *GeoService {
+func NewGeoService(geoProvider geogrpc.GeoProviderer) *GeoService {
 	return &GeoService{geoProvider: geoProvider}
 }
 
 func (g *GeoService) ListLevenshtein(in ListlIn) ListlOut {
 	levenshtein, err := g.geoProvider.ListLevenshtein(in.Column, in.Text)
 	if err != nil {
-		return ListlOut{}
+		return ListlOut{models.SearchHistoryAddress{}, err}
 	}
 	return ListlOut{levenshtein, nil}
 }

@@ -9,27 +9,24 @@ import (
 	"github.com/go-chi/chi"
 
 	"net/http"
-	"strconv"
 )
 
 type Userer interface {
 	Create(w http.ResponseWriter, r *http.Request)
 	GetByUsername(w http.ResponseWriter, r *http.Request)
-	Update(w http.ResponseWriter, r *http.Request)
-	Delete(w http.ResponseWriter, r *http.Request)
 	List(w http.ResponseWriter, r *http.Request)
 }
 
-type User struct {
+type UserController struct {
 	service service.Userer
 	responder.Responder
 }
 
-func NewUser(service service.Userer, responder responder.Responder) *User {
-	return &User{service: service, Responder: responder}
+func NewUserController(service service.Userer, responder responder.Responder) *UserController {
+	return &UserController{service: service, Responder: responder}
 }
 
-func (u *User) Create(w http.ResponseWriter, r *http.Request) {
+func (u *UserController) Create(w http.ResponseWriter, r *http.Request) {
 	var user CreateRequest
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
@@ -53,10 +50,10 @@ func (u *User) Create(w http.ResponseWriter, r *http.Request) {
 	u.OutputJSON(w, out.Message)
 }
 
-func (u *User) GetByUsername(w http.ResponseWriter, r *http.Request) {
-	id := chi.URLParam(r, "id")
-	fmt.Println(id)
-	out := u.service.GetByID(service.GetIn{Id: id})
+func (u *UserController) GetByUsername(w http.ResponseWriter, r *http.Request) {
+	username := chi.URLParam(r, "username")
+	fmt.Println(username)
+	out := u.service.GetByUsername(service.GetIn{Username: username})
 	if out.Error != nil {
 		u.Responder.ErrorBadRequest(w, out.Error)
 		return
@@ -66,73 +63,10 @@ func (u *User) GetByUsername(w http.ResponseWriter, r *http.Request) {
 	u.Responder.OutputJSON(w, out.User)
 }
 
-func (u *User) Update(w http.ResponseWriter, r *http.Request) {
-	var user UpdateRequest
-	err := json.NewDecoder(r.Body).Decode(&user)
-	if err != nil {
-		u.Responder.ErrorBadRequest(w, err)
-		return
-	}
-
-	out := u.service.Update(service.UpdateIn{User: models.User{
-		ID:       user.Id,
-		Username: user.Username,
-		Password: user.Password,
-		IsDelete: false,
-	}})
+func (u *UserController) List(w http.ResponseWriter, r *http.Request) {
+	out := u.service.List()
 
 	if out.Error != nil {
-		u.Responder.ErrorBadRequest(w, out.Error)
-		return
-	}
-
-	w.WriteHeader(http.StatusOK)
-	u.Responder.OutputJSON(w, out.Message)
-}
-
-func (u *User) Delete(w http.ResponseWriter, r *http.Request) {
-	var user DeleteRequest
-	err := json.NewDecoder(r.Body).Decode(&user)
-	if err != nil {
-		u.Responder.ErrorBadRequest(w, err)
-		return
-	}
-
-	out := u.service.Delete(service.DeleteIn{Id: user.Id})
-
-	if out.Error != nil {
-		u.Responder.ErrorBadRequest(w, out.Error)
-		return
-	}
-
-	w.WriteHeader(http.StatusOK)
-	u.Responder.OutputJSON(w, out.Message)
-}
-
-func (u *User) List(w http.ResponseWriter, r *http.Request) {
-	limit, err := strconv.Atoi(r.URL.Query().Get("Limit"))
-	if err != nil {
-		limit = 100
-	}
-
-	offset, err := strconv.Atoi(r.URL.Query().Get("Offset"))
-	if err != nil {
-		offset = 0
-	}
-
-	out := u.service.List(service.ListIn{
-		Limit:  limit,
-		Offset: offset,
-	})
-
-	if out.Error != nil {
-		u.Responder.ErrorBadRequest(w, out.Error)
-		return
-	}
-
-	outCount := u.service.Count()
-
-	if outCount.Error != nil {
 		u.Responder.ErrorBadRequest(w, out.Error)
 		return
 	}
@@ -140,7 +74,5 @@ func (u *User) List(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	u.Responder.OutputJSON(w, ListResponse{
 		Users: out.User,
-		Count: outCount.Count,
 	})
-
 }

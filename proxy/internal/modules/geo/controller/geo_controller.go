@@ -81,7 +81,7 @@ func (g *GeoController) Geo(w http.ResponseWriter, r *http.Request) {
 	out := g.service.Geo(service.GeoIn{Data: body})
 
 	if err != nil {
-		if out.Error.Error() == "failed make ..database for services request" {
+		if out.Error.Error() == "failed make ..database for service request" {
 			g.Responder.ErrorBadRequest(w, err)
 			return
 		} else if out.Error.Error() == "failed to do request" {

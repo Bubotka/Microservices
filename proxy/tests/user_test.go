@@ -238,7 +238,7 @@ func TestGetByIDUser(t *testing.T) {
 
 		r.Get("/user/{id}", func(w http.ResponseWriter, r *http.Request) {
 			id := chi.URLParam(r, "id")
-			out := userService.GetByID(service3.GetIn{Id: id})
+			out := userService.GetByUsername(service3.GetIn{Id: id})
 			if out.Error != nil {
 				resp.ErrorBadRequest(w, out.Error)
 				return

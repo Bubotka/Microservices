@@ -40,12 +40,12 @@ func main() {
 	}
 
 	client := redis.NewClient(&redis.Options{
-		Addr: "redis:6379",
+		Addr: "redisgeo:6379",
 	})
 
 	redisCache := cache.NewRedis(client)
 	sqlAdapter := adapter.NewSQLAdapter(postgresDB, squirrel.StatementBuilder.PlaceholderFormat(squirrel.Dollar))
 
 	grpcServer := grpc.NewGrpcServer(sqlAdapter, redisCache)
-	go grpcServer.Listen(":8081")
+	grpcServer.Listen(":8081")
 }

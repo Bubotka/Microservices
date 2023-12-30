@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.12.4
-// source: api/protoc/geo_provider.proto
+// source: api/protoc/user.proto
 
 package geo
 

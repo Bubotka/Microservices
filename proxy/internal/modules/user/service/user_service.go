@@ -1,68 +1,44 @@
 package service
 
 import (
-	"context"
-	"github.com/Bubotka/Microservices/geo/pkg/db/adapter"
-	"github.com/Bubotka/Microservices/proxy/internal/modules/user/storage"
+	"github.com/Bubotka/Microservices/proxy/internal/models"
+	"github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc"
 )
 
-type User struct {
-	storage storage.UserRepository
+type UserService struct {
+	user grpc.UserProviderer
 }
 
-func NewUserService(storage storage.UserRepository) *User {
-	return &User{storage: storage}
+func NewUserService(user grpc.UserProviderer) *UserService {
+	return &UserService{user: user}
 }
 
-func (u *User) Create(in CreateIn) CreateOut {
-	err := u.storage.Create(context.Background(), in.User)
+func (u *UserService) Create(in CreateIn) CreateOut {
+	err := u.user.Create(in.User)
 	if err != nil {
-		return CreateOut{"", err}
+		return CreateOut{"Не удалось создать пользователя", err}
 	}
-	return CreateOut{"Пользователь успешно создан", nil}
+	return CreateOut{
+		Message: "Пользователь успешно создан",
+		Error:   nil,
+	}
 }
 
-func (u *User) GetByID(in GetIn) GetOut {
-	user, err := u.storage.GetByID(context.Background(), in.Id)
+func (u *UserService) GetByUsername(in GetIn) GetOut {
+	user, err := u.user.Profile(in.Username)
+	if err != nil {
+		return GetOut{models.User{}, err}
+	}
 	return GetOut{
 		User:  user,
-		Error: err,
+		Error: nil,
 	}
 }
 
-func (u *User) Update(in UpdateIn) UpdateOut {
-	err := u.storage.Update(context.Background(), in.User)
+func (u *UserService) List() ListOut {
+	users, err := u.user.List()
 	if err != nil {
-		return UpdateOut{"", err}
+		return ListOut{nil, err}
 	}
-	return UpdateOut{"Пользователь успешно обновлён", nil}
-}
-
-func (u *User) Delete(in DeleteIn) DeleteOut {
-	err := u.storage.Delete(context.Background(), in.Id)
-	if err != nil {
-		return DeleteOut{"", err}
-	}
-	return DeleteOut{"Пользователь успешно удалён", nil}
-}
-
-func (u *User) List(in ListIn) ListOut {
-	user, err := u.storage.List(context.Background(), adapter.Condition{
-		LimitOffset: &adapter.LimitOffset{
-			Offset: int64(in.Offset),
-			Limit:  int64(in.Limit),
-		},
-	})
-	return ListOut{
-		User:  user,
-		Error: err,
-	}
-}
-
-func (u *User) Count() CountOut {
-	count, err := u.storage.Count(context.Background(), adapter.Condition{})
-	return CountOut{
-		Count: count,
-		Error: err,
-	}
+	return ListOut{users, err}
 }

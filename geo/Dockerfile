@@ -8,14 +8,13 @@ WORKDIR /app
 COPY . .
 
 # Собираем приложение
-RUN go build -o main
+RUN go build -o main ./cmd/geo
 
 # Начинаем новую стадию сборки на основе минимального образа
 FROM alpine:latest
 
 # Добавляем исполняемый файл из первой стадии в корневую директорию контейнера
 COPY --from=builder /app/main /main
-COPY --from=builder /app/static /static
 
 # Запускаем приложение
 CMD ["/main"]
