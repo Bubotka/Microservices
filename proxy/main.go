@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/clients/auth/grpc/client_adapter"
 	clientadaptergeo "github.com/Bubotka/Microservices/proxy/internal/infrastructure/clients/geo/grpc/client_adapter"
 	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/router"
 	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/server"
@@ -17,6 +18,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	authConnect, err := client_adapter.Connect("auth:8082")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	userConnect, err := clientadapteruser.Connect("user:8083")
 	if err != nil {
 		log.Fatal(err)
@@ -24,10 +30,11 @@ func main() {
 
 	geoClientGRpcAdapter := clientadaptergeo.NewGeoClientGRpcAdapter(geoConnect)
 	userClientGRpcAdapter := clientadapteruser.NewUserClientGRpcAdapter(userConnect)
+	authClientGRpcAdapter := client_adapter.NewAuthClientGRpcAdapter(authConnect)
 
 	s := &http.Server{
 		Addr:    ":8080",
-		Handler: router.NewRouter(geoClientGRpcAdapter, userClientGRpcAdapter),
+		Handler: router.NewRouter(geoClientGRpcAdapter, userClientGRpcAdapter, authClientGRpcAdapter),
 	}
 
 	serv := server.NewServer(s)

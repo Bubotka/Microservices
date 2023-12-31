@@ -13,16 +13,16 @@ type Auther interface {
 	Login(w http.ResponseWriter, r *http.Request)
 }
 
-type Auth struct {
+type AuthController struct {
 	auth service.Auther
 	responder.Responder
 }
 
-func NewAuth(auth service.Auther, responder responder.Responder) *Auth {
-	return &Auth{auth: auth, Responder: responder}
+func NewAuthController(auth service.Auther, responder responder.Responder) *AuthController {
+	return &AuthController{auth: auth, Responder: responder}
 }
 
-func (a *Auth) Register(w http.ResponseWriter, r *http.Request) {
+func (a *AuthController) Register(w http.ResponseWriter, r *http.Request) {
 	var user User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
@@ -44,7 +44,7 @@ func (a *Auth) Register(w http.ResponseWriter, r *http.Request) {
 	a.OutputJSON(w, "Пользователь успешно зарегестрирован")
 }
 
-func (a *Auth) Login(w http.ResponseWriter, r *http.Request) {
+func (a *AuthController) Login(w http.ResponseWriter, r *http.Request) {
 	var user User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {

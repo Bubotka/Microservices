@@ -1,6 +1,6 @@
 package controller
 
-import "github.com/Bubotka/Microservices/proxy/internal/models"
+import "github.com/Bubotka/Microservices/user/domain/models"
 
 type CreateRequest struct {
 	Username string `json:"username"`

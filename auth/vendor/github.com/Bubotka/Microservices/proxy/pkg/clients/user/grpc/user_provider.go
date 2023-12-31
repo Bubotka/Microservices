@@ -1,0 +1,35 @@
+package grpc
+
+import (
+	"github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc/client_adapter"
+	"github.com/Bubotka/Microservices/user/domain/models"
+)
+
+type UserProviderer interface {
+	Create(user models.User) error
+	CheckUser(user models.User) error
+	Profile(username string) (models.User, error)
+	List() ([]models.User, error)
+}
+
+type UserProvider struct {
+	client client_adapter.UserClientAdapter
+}
+
+func NewUserProvider(client client_adapter.UserClientAdapter) *UserProvider {
+	return &UserProvider{client: client}
+}
+
+func (u *UserProvider) CheckUser(user models.User) error { return u.client.CheckUser(user) }
+
+func (u *UserProvider) Create(user models.User) error {
+	return u.client.Create(user)
+}
+
+func (u *UserProvider) Profile(username string) (models.User, error) {
+	return u.client.Profile(username)
+}
+
+func (u *UserProvider) List() ([]models.User, error) {
+	return u.client.List()
+}

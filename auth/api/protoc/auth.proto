@@ -7,15 +7,14 @@ import "google/protobuf/empty.proto";
 option go_package = "../../pkg/go/user";
 
 service Auth {
-  rpc Register (UserRequest) returns (google.protobuf.Empty) {}
-  rpc Login (UserRequest) returns (LoginResponse) {}
+  rpc Register (UserAuthRequest) returns (google.protobuf.Empty) {}
+  rpc Login (UserAuthRequest) returns (LoginResponse) {}
 }
 
-message UserRequest {
+message UserAuthRequest {
   string username = 1;
   string password = 2;
 }
-
 
 message LoginResponse {
   string token = 1;

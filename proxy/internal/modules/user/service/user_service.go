@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/Bubotka/Microservices/proxy/internal/models"
 	"github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc"
+	"github.com/Bubotka/Microservices/user/domain/models"
 )
 
 type UserService struct {

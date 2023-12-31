@@ -11,8 +11,7 @@ type RegisterIn struct {
 }
 
 type RegisterOut struct {
-	HashedPassword string
-	Error          error
+	Error error
 }
 
 type LoginIn struct {

@@ -1,4 +1,4 @@
-package grpc
+package geo
 
 import (
 	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/clients/geo/grpc/client_adapter"

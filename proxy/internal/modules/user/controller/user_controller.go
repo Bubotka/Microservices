@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/responder"
-	"github.com/Bubotka/Microservices/proxy/internal/models"
+	"github.com/Bubotka/Microservices/user/domain/models"
+
 	"github.com/Bubotka/Microservices/proxy/internal/modules/user/service"
 	"github.com/go-chi/chi"
 
@@ -52,7 +53,7 @@ func (u *UserController) Create(w http.ResponseWriter, r *http.Request) {
 
 func (u *UserController) GetByUsername(w http.ResponseWriter, r *http.Request) {
 	username := chi.URLParam(r, "username")
-	fmt.Println(username)
+	fmt.Println("Здесь должно был быть имя пользователя", username)
 	out := u.service.GetByUsername(service.GetIn{Username: username})
 	if out.Error != nil {
 		u.Responder.ErrorBadRequest(w, out.Error)

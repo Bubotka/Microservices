@@ -3,6 +3,7 @@ module github.com/Bubotka/Microservices/proxy
 go 1.19
 
 require (
+	github.com/Bubotka/Microservices/auth v0.0.0
 	github.com/Bubotka/Microservices/geo v0.0.0
 	github.com/Bubotka/Microservices/user v0.0.0
 	github.com/go-chi/chi v1.5.5
@@ -40,6 +41,7 @@ require (
 )
 
 replace (
+	github.com/Bubotka/Microservices/auth v0.0.0 => ../auth
 	github.com/Bubotka/Microservices/geo v0.0.0 => ../geo
 	github.com/Bubotka/Microservices/user v0.0.0 => ../user
 )

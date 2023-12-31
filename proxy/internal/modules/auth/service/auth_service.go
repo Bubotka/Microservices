@@ -1,54 +1,32 @@
 package service
 
 import (
-	"fmt"
-	"github.com/go-chi/jwtauth"
-	"golang.org/x/crypto/bcrypt"
+	"github.com/Bubotka/Microservices/proxy/internal/infrastructure/clients/auth"
+	"github.com/Bubotka/Microservices/user/domain/models"
 )
 
-var users = make(map[string]string)
-
-type Auth struct {
+type AuthService struct {
+	auth auth.AuthProviderer
 }
 
-func NewAuth() *Auth {
-	return &Auth{}
+func NewAuthService(auth auth.AuthProviderer) *AuthService {
+	return &AuthService{auth: auth}
 }
 
-func (a *Auth) Register(in RegisterIn) RegisterOut {
-	password, err := bcrypt.GenerateFromPassword([]byte(in.Password), bcrypt.DefaultCost)
+func (a *AuthService) Register(in RegisterIn) RegisterOut {
+	err := a.auth.Register(models.User{
+		Username: in.Username,
+		Password: in.Password,
+	})
+	return RegisterOut{err}
+}
+func (a *AuthService) Login(in LoginIn) LoginOut {
+	token, err := a.auth.Login(models.User{
+		Username: in.Username,
+		Password: in.Password,
+	})
 	if err != nil {
-		return RegisterOut{
-			HashedPassword: "",
-			Error:          err,
-		}
+		return LoginOut{"", err}
 	}
-	users[in.Username] = string(password)
-	return RegisterOut{
-		Error: nil,
-	}
-}
-
-func (a *Auth) Login(in LoginIn) LoginOut {
-	hashedPassword, ok := users[in.Username]
-	if !ok {
-		return LoginOut{
-			Token: "",
-			Error: fmt.Errorf("no such a user"),
-		}
-	}
-	err := bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(in.Password))
-	if err != nil {
-		return LoginOut{
-			Token: "",
-			Error: err,
-		}
-	}
-
-	tokenAuth := jwtauth.New("HS256", []byte("mysecretkey"), nil)
-	_, tokenString, _ := tokenAuth.Encode(map[string]interface{}{"username": in.Username})
-	return LoginOut{
-		Token: tokenString,
-		Error: nil,
-	}
+	return LoginOut{Token: token, Error: err}
 }

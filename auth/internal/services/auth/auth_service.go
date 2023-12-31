@@ -19,7 +19,7 @@ func NewAuthService(user grpc.UserProvider) *AuthService {
 	return &AuthService{user: user}
 }
 
-func (a *AuthService) Register(ctx context.Context, request *au.UserRequest) (*empty.Empty, error) {
+func (a *AuthService) Register(ctx context.Context, request *au.UserAuthRequest) (*empty.Empty, error) {
 	password, err := bcrypt.GenerateFromPassword([]byte(request.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return &empty.Empty{}, err
@@ -42,7 +42,7 @@ func (a *AuthService) Register(ctx context.Context, request *au.UserRequest) (*e
 	return &empty.Empty{}, err
 }
 
-func (a *AuthService) Login(ctx context.Context, request *au.UserRequest) (*au.LoginResponse, error) {
+func (a *AuthService) Login(ctx context.Context, request *au.UserAuthRequest) (*au.LoginResponse, error) {
 	user, err := a.user.Profile(request.Username)
 	if err != nil {
 		return nil, err
