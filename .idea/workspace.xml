@@ -5,61 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119f2091-7093-421e-9d04-397632f0349c" name="Changes" comment="Done">
-      <change afterPath="$PROJECT_DIR$/auth/tests/auth_service_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/geo/tests/geo_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/pkg/clients/user/grpc/mocks/UserProviderer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/.codeclimate.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/Taskfile.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/accessors.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/conversions.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/doc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/map.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/mutations.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/security.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/tests.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/type_specific.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/type_specific_codegen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/value.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/mock/doc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/mock/mock.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/test/user_service_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/auth/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/auth/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/internal/services/auth/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/internal/services/auth/auth_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/vendor/github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc/user_provider.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/vendor/github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc/user_provider.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/vendor/modules.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo/internal/storage/mocks/GeoRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/storage/mocks/GeoRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugo/themes/hugo-book/static/mermaid.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/themes/hugo-book/static/mermaid.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/geo.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/geo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/auth/controller/auth_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/auth/controller/auth_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/controller/user_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/controller/user_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_interface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/pkg/clients/user/grpc/user_provider.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/pkg/clients/user/grpc/user_provider.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/static/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/static/swagger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/tests/auth_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/tests/geo_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/tests/user_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_compare.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_compare.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_format.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_format.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_forward.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_forward.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_order.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertions.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertions.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/doc.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/doc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/http_assertions.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/http_assertions.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/modules.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/internal/storage/mocks/UserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/user/internal/storage/mocks/UserRepository.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
