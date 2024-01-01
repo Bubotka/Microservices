@@ -24,7 +24,7 @@
           }
         ],
         "tags": [
-          "геолокация"
+          "geo"
         ],
         "summary": "Определение адреса на основе широты и долготы.",
         "operationId": "geoRequest",
@@ -57,7 +57,7 @@
           }
         ],
         "tags": [
-          "поиск"
+          "geo"
         ],
         "summary": "Поиск адресов на основе запроса адреса.",
         "operationId": "searchRequest",
@@ -76,6 +76,109 @@
         "responses": {
           "200": {
             "$ref": "#/responses/searchResponse"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Авторизация пользователя.",
+        "operationId": "loginRequest",
+        "parameters": [
+          {
+            "example": "{\"username\":\"Kolia\",\"password\":\"123\"}",
+            "description": "Userdata - данные пользователя",
+            "name": "Userdata",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/loginResponse"
+          }
+        }
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Регистрация пользователя.",
+        "operationId": "registerRequest",
+        "parameters": [
+          {
+            "example": "{\"username\":\"Kolia\",\"password\":\"123\"}",
+            "description": "Userdata - данные пользователя",
+            "name": "Userdata",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/registerResponse"
+          }
+        }
+      }
+    },
+    "/api/user/list": {
+      "get": {
+        "security": [
+          {
+            "Bearer": [
+              "[]"
+            ]
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "summary": "Все пользователи.",
+        "operationId": "ListRequest",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ListResponseDock"
+          }
+        }
+      }
+    },
+    "/api/user/profile/{username}": {
+      "get": {
+        "security": [
+          {
+            "Bearer": [
+              "[]"
+            ]
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "summary": "Инфа о пользователе.",
+        "operationId": "ProfileRequest",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Username - имя пользователя",
+            "name": "Username",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/ProfileResponse"
           }
         }
       }
@@ -98,22 +201,72 @@
           "x-go-name": "Result"
         }
       },
-      "x-go-package": "main/internal/models"
+      "x-go-package": "github.com/Bubotka/Microservices/proxy/internal/models"
     },
     "AddressSearchReworked": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/AddressElementSearch"
       },
-      "x-go-package": "main/internal/models"
+      "x-go-package": "github.com/Bubotka/Microservices/proxy/internal/models"
+    },
+    "ListResponse": {
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          },
+          "x-go-name": "Users"
+        }
+      },
+      "x-go-package": "github.com/Bubotka/Microservices/proxy/internal/modules/user/controller"
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "IsDelete": {
+          "type": "boolean"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      },
+      "x-go-package": "github.com/Bubotka/Microservices/user/domain/models"
     }
   },
   "responses": {
+    "ListResponseDock": {
+      "description": "",
+      "schema": {
+        "$ref": "#/definitions/ListResponse"
+      }
+    },
+    "ProfileResponse": {
+      "description": "",
+      "schema": {
+        "$ref": "#/definitions/User"
+      }
+    },
     "geolocationResponse": {
       "description": "",
       "schema": {
         "$ref": "#/definitions/AddressSearchReworked"
       }
+    },
+    "loginResponse": {
+      "description": ""
+    },
+    "registerResponse": {
+      "description": ""
     },
     "searchResponse": {
       "description": "",

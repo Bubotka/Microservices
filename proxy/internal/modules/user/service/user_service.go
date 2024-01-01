@@ -13,17 +13,6 @@ func NewUserService(user grpc.UserProviderer) *UserService {
 	return &UserService{user: user}
 }
 
-func (u *UserService) Create(in CreateIn) CreateOut {
-	err := u.user.Create(in.User)
-	if err != nil {
-		return CreateOut{"Не удалось создать пользователя", err}
-	}
-	return CreateOut{
-		Message: "Пользователь успешно создан",
-		Error:   nil,
-	}
-}
-
 func (u *UserService) GetByUsername(in GetIn) GetOut {
 	user, err := u.user.Profile(in.Username)
 	if err != nil {

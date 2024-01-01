@@ -58,7 +58,7 @@ func (a *AuthController) Login(w http.ResponseWriter, r *http.Request) {
 	})
 
 	if out.Error != nil {
-		a.Responder.ErrorUnauthorized(w, err)
+		w.Write([]byte(out.Error.Error()))
 		return
 	}
 

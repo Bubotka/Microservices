@@ -1,7 +1,7 @@
 package docks
 
-//swagger:route Post /api/register регистрация registerRequest
-// Регистрация пользователя
+//swagger:route Post /api/auth/register auth registerRequest
+// Регистрация пользователя.
 // Responses:
 //   200: registerResponse
 
@@ -22,8 +22,8 @@ type registerResponse struct {
 	Result string
 }
 
-//swagger:route Post /api/login авторизация loginRequest
-// Авторизация пользователя
+//swagger:route Post /api/auth/login auth loginRequest
+// Авторизация пользователя.
 // Responses:
 //   200: loginResponse
 

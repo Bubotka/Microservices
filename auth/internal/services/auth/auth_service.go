@@ -2,6 +2,7 @@ package auth
 
 import (
 	"context"
+	"fmt"
 	au "github.com/Bubotka/Microservices/auth/pkg/go/auth"
 	"github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc"
 	"github.com/Bubotka/Microservices/user/domain/models"
@@ -11,11 +12,11 @@ import (
 )
 
 type AuthService struct {
-	user grpc.UserProvider
+	user grpc.UserProviderer
 	au.UnimplementedAuthServer
 }
 
-func NewAuthService(user grpc.UserProvider) *AuthService {
+func NewAuthService(user grpc.UserProviderer) *AuthService {
 	return &AuthService{user: user}
 }
 
@@ -44,6 +45,7 @@ func (a *AuthService) Register(ctx context.Context, request *au.UserAuthRequest)
 
 func (a *AuthService) Login(ctx context.Context, request *au.UserAuthRequest) (*au.LoginResponse, error) {
 	user, err := a.user.Profile(request.Username)
+	fmt.Println("Auth login", err)
 	if err != nil {
 		return nil, err
 	}

@@ -4,7 +4,7 @@ import (
 	"github.com/Bubotka/Microservices/proxy/internal/models"
 )
 
-//swagger:route Post /api/address/geocode геолокация geoRequest
+//swagger:route Post /api/address/geocode geo geoRequest
 // Определение адреса на основе широты и долготы.
 // security:
 // 	- Bearer: []
@@ -27,7 +27,7 @@ type geolocationResponse struct {
 	Addresses models.AddressSearchReworked
 }
 
-// swagger:route POST /api/address/search поиск searchRequest
+// swagger:route POST /api/address/search geo searchRequest
 // Поиск адресов на основе запроса адреса.
 // security:
 // 	- Bearer: []

@@ -3,7 +3,6 @@ package service
 import "github.com/Bubotka/Microservices/user/domain/models"
 
 type Userer interface {
-	Create(in CreateIn) CreateOut
 	GetByUsername(in GetIn) GetOut
 	List() ListOut
 }

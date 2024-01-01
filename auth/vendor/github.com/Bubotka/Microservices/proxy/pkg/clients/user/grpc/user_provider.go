@@ -5,6 +5,7 @@ import (
 	"github.com/Bubotka/Microservices/user/domain/models"
 )
 
+//go:generate go run github.com/vektra/mockery/v2@v2.36.0 --name=UserProviderer
 type UserProviderer interface {
 	Create(user models.User) error
 	CheckUser(user models.User) error

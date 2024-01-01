@@ -4,8 +4,8 @@ package mocks
 
 import (
 	context "context"
-	models "main/internal/models"
 
+	models "github.com/Bubotka/Microservices/geo/domain/models"
 	mock "github.com/stretchr/testify/mock"
 )
 

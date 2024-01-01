@@ -4,9 +4,62 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="119f2091-7093-421e-9d04-397632f0349c" name="Changes" comment="Almost done">
+    <list default="true" id="119f2091-7093-421e-9d04-397632f0349c" name="Changes" comment="Done">
+      <change afterPath="$PROJECT_DIR$/auth/tests/auth_service_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geo/tests/geo_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/pkg/clients/user/grpc/mocks/UserProviderer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/.codeclimate.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/Taskfile.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/accessors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/conversions.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/mutations.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/security.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/tests.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/type_specific.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/type_specific_codegen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/objx/value.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/mock/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/mock/mock.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/test/user_service_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/auth/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/auth/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/internal/services/auth/auth_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/internal/services/auth/auth_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/vendor/github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc/user_provider.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/vendor/github.com/Bubotka/Microservices/proxy/pkg/clients/user/grpc/user_provider.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/auth/vendor/modules.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/internal/storage/mocks/GeoRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/geo/internal/storage/mocks/GeoRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hugo/themes/hugo-book/static/mermaid.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/hugo/themes/hugo-book/static/mermaid.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/geo.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/geo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/docks/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/docks/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/auth/controller/auth_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/auth/controller/auth_controller.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/controller/user_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/controller/user_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/internal/modules/user/service/user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/pkg/clients/user/grpc/user_provider.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/pkg/clients/user/grpc/user_provider.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/static/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/static/swagger.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/tests/auth_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/tests/geo_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/tests/user_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_compare.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_compare.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_format.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_format.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_forward.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_forward.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_order.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertion_order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertions.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/assertions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/doc.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/doc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/http_assertions.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/github.com/stretchr/testify/assert/http_assertions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/vendor/modules.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/internal/storage/mocks/UserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/user/internal/storage/mocks/UserRepository.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +88,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Docker.geo: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/valentine/Go/src/Microservices&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Docker.geo: Compose Deployment.executor": "Run",
+    "Go Test.TestAuthService_Login in github.com/Bubotka/Microservices/auth/tests.executor": "Run",
+    "Go Test.TestAuthService_Register in github.com/Bubotka/Microservices/auth/tests.executor": "Run",
+    "Go Test.TestGeoService_Create in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
+    "Go Test.TestGeoService_GeoCode in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
+    "Go Test.TestGeoService_ListLevenshtein in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
+    "Go Test.TestGeoService_Search in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
+    "Go Test.TestUser_CheckUser in github.com/Bubotka/Microservices/user/test.executor": "Run",
+    "Go Test.TestUser_Create in github.com/Bubotka/Microservices/user/test.executor": "Run",
+    "Go Test.TestUser_List in github.com/Bubotka/Microservices/user/test.executor": "Run",
+    "Go Test.TestUser_Profile in github.com/Bubotka/Microservices/user/test.executor": "Run",
+    "Go Test.go test github.com/Bubotka/Microservices/auth/tests.executor": "Run",
+    "Go Test.go test github.com/Bubotka/Microservices/geo/tests.executor": "Run",
+    "Go Test.go test github.com/Bubotka/Microservices/user/test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/home/valentine/Go/src/Microservices",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -63,21 +129,71 @@
       <recent name="$PROJECT_DIR$/auth/domain/models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user/test" />
+      <recent name="$PROJECT_DIR$/auth/tests" />
       <recent name="$PROJECT_DIR$/auth/pkg/go/auth" />
       <recent name="$PROJECT_DIR$/user/pkg/go/user" />
       <recent name="$PROJECT_DIR$/user" />
-      <recent name="$PROJECT_DIR$/proxy/pkg" />
-      <recent name="$PROJECT_DIR$/user/pkg" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/Bubotka/Microservices/proxy">
-    <configuration name="go build github.com/Bubotka/Microservices/proxy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.go test github.com/Bubotka/Microservices/user/test">
+    <configuration name="TestUser_CheckUser in github.com/Bubotka/Microservices/user/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Microservices" />
-      <working_directory value="$PROJECT_DIR$/proxy" />
+      <working_directory value="$PROJECT_DIR$/user/test" />
+      <root_directory value="$PROJECT_DIR$/user" />
       <kind value="PACKAGE" />
-      <package value="github.com/Bubotka/Microservices/proxy" />
+      <package value="github.com/Bubotka/Microservices/user/test" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/proxy/main.go" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUser_CheckUser\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUser_Create in github.com/Bubotka/Microservices/user/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Microservices" />
+      <working_directory value="$PROJECT_DIR$/user/test" />
+      <root_directory value="$PROJECT_DIR$/user" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Bubotka/Microservices/user/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUser_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUser_List in github.com/Bubotka/Microservices/user/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Microservices" />
+      <working_directory value="$PROJECT_DIR$/user/test" />
+      <root_directory value="$PROJECT_DIR$/user" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Bubotka/Microservices/user/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUser_List\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUser_Profile in github.com/Bubotka/Microservices/user/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Microservices" />
+      <working_directory value="$PROJECT_DIR$/user/test" />
+      <root_directory value="$PROJECT_DIR$/user" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Bubotka/Microservices/user/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUser_Profile\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test github.com/Bubotka/Microservices/user/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Microservices" />
+      <working_directory value="$PROJECT_DIR$/user/test" />
+      <root_directory value="$PROJECT_DIR$/user" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Bubotka/Microservices/user/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
@@ -86,18 +202,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="geo: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="geo/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build github.com/Bubotka/Microservices/proxy" />
-        <item itemvalue="Docker.geo: Compose Deployment" />
+        <item itemvalue="Go Test.go test github.com/Bubotka/Microservices/user/test" />
+        <item itemvalue="Go Test.TestUser_Profile in github.com/Bubotka/Microservices/user/test" />
+        <item itemvalue="Go Test.TestUser_List in github.com/Bubotka/Microservices/user/test" />
+        <item itemvalue="Go Test.TestUser_Create in github.com/Bubotka/Microservices/user/test" />
+        <item itemvalue="Go Test.TestUser_CheckUser in github.com/Bubotka/Microservices/user/test" />
       </list>
     </recent_temporary>
   </component>
@@ -116,7 +227,8 @@
     <MESSAGE value="Trying to create package" />
     <MESSAGE value="Geo in process" />
     <MESSAGE value="Almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost done" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
