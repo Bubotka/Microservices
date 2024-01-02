@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="119f2091-7093-421e-9d04-397632f0349c" name="Changes" comment="Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/cmd/auth/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/cmd/auth/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/internal/grpc/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/internal/grpc/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,38 +36,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "Docker.geo: Compose Deployment.executor": "Run",
-    "Go Test.TestAuthService_Login in github.com/Bubotka/Microservices/auth/tests.executor": "Run",
-    "Go Test.TestAuthService_Register in github.com/Bubotka/Microservices/auth/tests.executor": "Run",
-    "Go Test.TestGeoService_Create in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
-    "Go Test.TestGeoService_GeoCode in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
-    "Go Test.TestGeoService_ListLevenshtein in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
-    "Go Test.TestGeoService_Search in github.com/Bubotka/Microservices/geo/tests.executor": "Run",
-    "Go Test.TestUser_CheckUser in github.com/Bubotka/Microservices/user/test.executor": "Run",
-    "Go Test.TestUser_Create in github.com/Bubotka/Microservices/user/test.executor": "Run",
-    "Go Test.TestUser_List in github.com/Bubotka/Microservices/user/test.executor": "Run",
-    "Go Test.TestUser_Profile in github.com/Bubotka/Microservices/user/test.executor": "Run",
-    "Go Test.go test github.com/Bubotka/Microservices/auth/tests.executor": "Run",
-    "Go Test.go test github.com/Bubotka/Microservices/geo/tests.executor": "Run",
-    "Go Test.go test github.com/Bubotka/Microservices/user/test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/valentine/Go/src/Microservices",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Docker.geo: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestAuthService_Login in github.com/Bubotka/Microservices/auth/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestAuthService_Register in github.com/Bubotka/Microservices/auth/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestGeoService_Create in github.com/Bubotka/Microservices/geo/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestGeoService_GeoCode in github.com/Bubotka/Microservices/geo/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestGeoService_ListLevenshtein in github.com/Bubotka/Microservices/geo/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestGeoService_Search in github.com/Bubotka/Microservices/geo/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestUser_CheckUser in github.com/Bubotka/Microservices/user/test.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestUser_Create in github.com/Bubotka/Microservices/user/test.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestUser_List in github.com/Bubotka/Microservices/user/test.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.TestUser_Profile in github.com/Bubotka/Microservices/user/test.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.go test github.com/Bubotka/Microservices/auth/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.go test github.com/Bubotka/Microservices/geo/tests.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.go test github.com/Bubotka/Microservices/user/test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/valentine/Go/src/Microservices&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />

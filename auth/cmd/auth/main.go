@@ -17,6 +17,6 @@ func main() {
 
 	userProvider := ugrpc.NewUserProvider(userClientGRpcAdapter)
 
-	grpcServer := grpc.NewGrpcServer(*userProvider)
+	grpcServer := grpc.NewGrpcServer(userProvider)
 	grpcServer.Listen(":8082")
 }

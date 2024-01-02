@@ -10,10 +10,10 @@ import (
 )
 
 type GrpcServer struct {
-	provider ugrpc.UserProvider
+	provider ugrpc.UserProviderer
 }
 
-func NewGrpcServer(provider ugrpc.UserProvider) *GrpcServer {
+func NewGrpcServer(provider ugrpc.UserProviderer) *GrpcServer {
 	return &GrpcServer{provider: provider}
 }
 
